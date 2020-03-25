@@ -1,0 +1,54 @@
+.header {
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+  }
+
+  .header__pic {
+    height: 100px;
+    width: 500px;
+    background-image: url('./flower1.jpg');
+    background-size: cover;
+    background-position: left bottom;
+  }
+
+  h1 {
+    color: red;
+    font-family: 'Pacifico', cursive;
+    justify-self: center;
+  }
+
+  .header__contacts {
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    align-items: flex-end;
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      width: max-content;
+    }
+
+    a {
+      margin: 5px 50px;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+
+      @media (max-width: 640px) {
+        margin: 5px 10px;
+      }
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
+}
