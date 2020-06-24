@@ -4,9 +4,9 @@ import "./Filter.scss";
 const Filter = ({ types, onTypeChange }) => {
   return (
     <div className="filter">
-      {types.map(type => {
+      {types.map((type, index) => {
         return (
-          <div className="filter__item">
+          <div key={index} className="filter__item">
             <input
               type="checkbox"
               id={type.name}
@@ -14,7 +14,7 @@ const Filter = ({ types, onTypeChange }) => {
               onChange={onTypeChange}
               checked={type.checked}
             />
-            <label for={type.name}>{type.name}</label>
+            <label htmlFor={type.name}>{type.name}</label>
           </div>
         );
       })}

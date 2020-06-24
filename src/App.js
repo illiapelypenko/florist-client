@@ -4,6 +4,7 @@ import Filter from './Filter/Filter';
 import Flowers from './Flowers/Flowers';
 import Footer from './Footer/Footer';
 import serverURL from './serverURL';
+import axios from 'axios';
 import './App.scss';
 
 const App = () => {
@@ -12,21 +13,21 @@ const App = () => {
 	const [types, setTypes] = useState([]);
 
 	const getItems = async () => {
-		const res = await fetch(`${serverURL}/api/items/all`);
-		const items = await res.json();
+		const res = await axios.get(`${serverURL}/api/items/all`);
+		const items = await res.data;
 		setItems(items);
 	};
 
 	const getTypes = async () => {
-		const res = await fetch(`${serverURL}/api/types/all`);
-		let types = await res.json();
+		const res = await axios.get(`${serverURL}/api/types/all`);
+		let types = await res.data;
 		types = types.map((type) => ({ ...type, checked: false }));
 		setTypes(types);
 	};
 
 	const getContacts = async () => {
-		const res = await fetch(`${serverURL}/api/contacts/`);
-		const contacts = await res.json();
+		const res = await axios.get(`${serverURL}/api/contacts/`);
+		const contacts = await res.data;
 		setContacts(contacts);
 	};
 
