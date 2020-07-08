@@ -3,7 +3,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
 
   @media (max-width: 640px) {
     flex-direction: column;
@@ -12,13 +11,10 @@
   .header__pic {
     height: 100px;
     width: 500px;
-    background-image: url('./flower1.jpg');
-    background-size: cover;
-    background-position: left bottom;
   }
 
   h1 {
-    color: red;
+    color: $main-color;
     font-family: 'Pacifico', cursive;
     justify-self: center;
   }
