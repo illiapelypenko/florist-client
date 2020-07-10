@@ -1,5 +1,4 @@
 import React from 'react';
-import serverURL from '../../serverURL';
 
 const Flower = ({ flower: { _id, fileName, location, name, price } }) => {
   return (

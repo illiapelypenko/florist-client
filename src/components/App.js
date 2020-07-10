@@ -6,6 +6,7 @@ import Footer from './Footer/Footer';
 import serverURL from '../serverURL';
 import axios from 'axios';
 import './App.scss';
+import Navbar from './Navbar/Navbar';
 
 const App = () => {
   const [items, setItems] = useState([]);
@@ -38,13 +39,16 @@ const App = () => {
     setTypes(newTypes);
   };
 
-  useEffect(getItems, []);
-  useEffect(getTypes, []);
-  useEffect(getContacts, []);
+  useEffect(() => {
+    getItems();
+    getTypes();
+    getContacts();
+  }, []);
 
   return (
     <div className='app'>
       <Header contacts={contacts} />
+      <Navbar />
       {/* <div className='main'>
         <Filter types={types} onTypeChange={handleTypeChange} />
         <Flowers flowers={items} types={types} />

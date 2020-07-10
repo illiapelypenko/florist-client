@@ -1,9 +1,16 @@
 * {
-	margin: 0px;
-	padding: 0px;
-	box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
-	background-color: $background-color;
+  background-color: $background-color;
+  padding: 0px 20px;
+  font-family: $main-font;
+  color: $font-color;
+}
+
+.app {
+  height: 200vh;
 }

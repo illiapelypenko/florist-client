@@ -1,50 +1,55 @@
 .header {
-	min-height: 100px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-	@media (max-width: 640px) {
-		flex-direction: column;
-	}
+  &__block {
+    width: 250px;
+    height: 100%;
+  }
 
-	.header__pic {
-		height: 100px;
-		width: auto;
-	}
+  &__contacts {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 
-	h1 {
-		color: #000;
-		font-family: $logo-font;
-		font-size: 5rem;
-	}
+    li {
+      margin: 5px 0px;
 
-	.header__contacts {
-		justify-self: end;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		width: 500px;
-		align-items: flex-end;
+      a {
+        color: $font-color;
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
+  }
 
-		@media (max-width: 640px) {
-			flex-direction: column;
-			width: max-content;
-		}
+  &__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $main-color;
 
-		a {
-			margin: 5px 50px;
-			color: black;
-			font-weight: bold;
-			cursor: pointer;
+    h1 {
+      font-family: $logo-font;
+      font-weight: 100;
+      font-size: 3rem;
+    }
+  }
 
-			@media (max-width: 640px) {
-				margin: 5px 10px;
-			}
+  &__icon-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
 
-			&:hover {
-				color: red;
-			}
-		}
-	}
+    .header__icon {
+      width: 75px;
+      height: 75spx;
+    }
+  }
 }

@@ -1,21 +1,30 @@
 import React from 'react';
-import bigAbstractRose from '../../assets/big-abstract-rose-side.png';
+import FlowerIcon from '../../assets/flower.svg';
 
 const Header = ({ contacts }) => {
-	return (
-		<div className='header'>
-			<img
-				className='header__pic'
-				src={bigAbstractRose}
-				alt='big-abstract-rose'></img>
-			<h1>FLORIST</h1>
-			<div className='header__contacts'>
-				<a href={`tel:${contacts.phone1}`}>{contacts.phone1}</a>
-				<a href={`tel:${contacts.phone2}`}>{contacts.phone2}</a>
-				<a href={`email:${contacts.email}`}>{contacts.email}</a>
-			</div>
-		</div>
-	);
+  return (
+    <div className='header'>
+      <ul className='header__block header__contacts'>
+        <li>
+          <a href={`tel:${contacts.phone1}`}>{contacts.phone1}</a>
+        </li>
+        <li>
+          <a href={`tel:${contacts.phone2}`}>{contacts.phone2}</a>
+        </li>
+        <li>
+          <a href={`email:${contacts.email}`}>{contacts.email}</a>
+        </li>
+      </ul>
+      <div className='header__block header__logo'>
+        <h1>FLORIST</h1>
+      </div>
+      <div className='header__block'>
+        <div className='header__icon-container'>
+          <img class='header__icon' src={FlowerIcon}></img>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Header;

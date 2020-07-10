@@ -1,13 +1,12 @@
-$logo-font: 'Dancing Script', cursive;
-
 $breakpoints: (
-	'small': 640px,
-	'medium': 890px,
-	'big': 1200px,
-	'large': 1525px,
+  'small': 640px,
+  'medium': 890px,
+  'big': 1200px,
+  'large': 1525px,
 );
 
 // $background-color: rgb(191, 255, 202);
-$background-color: #fffcd5;
-$main-color: rgb(255, 0, 157);
+$background-color: #ffffff;
+$font-color: rgb(141, 141, 141);
+$main-color: rgb(255, 126, 201);
 $secondary-color: rgb(133, 255, 154);
