@@ -1,5 +1,4 @@
 import React from "react";
-import FlowerIcon from "../../assets/flower.svg";
 import { useSelector } from "react-redux";
 import { State, Contacts } from "../../redux/types";
 
@@ -22,15 +21,7 @@ const Header = () => {
       <div className='header__block header__logo'>
         <h1>FLORIST</h1>
       </div>
-      <div className='header__block'>
-        <div className='header__icon-container'>
-          <img
-            className='header__icon'
-            src={FlowerIcon}
-            alt='flower-icon'
-          ></img>
-        </div>
-      </div>
+      <div className='header__block'></div>
     </div>
   );
 };

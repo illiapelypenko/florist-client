@@ -7,6 +7,7 @@ import Footer from "./Footer/Footer";
 import "../stylesheets/main.scss";
 import Navbar from "./Navbar/Navbar";
 import { useDispatch } from "react-redux";
+import Basket from "./Basket/Basket";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ const App = () => {
       <div className='main'>
         <Filter />
         <Flowers />
+        <Basket />
       </div>
       <Footer />
     </div>

@@ -9,6 +9,7 @@ import {
   GET_TYPES_TYPE,
   SET_TYPES_TYPE,
   GET_CONTACTS_TYPE,
+  ADD_ITEM_TO_BASKET_TYPE,
   Item,
   Type,
   Contacts,
@@ -18,6 +19,7 @@ export const GET_ITEMS: GET_ITEMS_TYPE = "GET_ITEMS";
 export const GET_TYPES: GET_TYPES_TYPE = "GET_TYPES";
 export const SET_TYPES: SET_TYPES_TYPE = "SET_TYPES";
 export const GET_CONTACTS: GET_CONTACTS_TYPE = "GET_CONTACTS";
+export const ADD_ITEM_TO_BASKET: ADD_ITEM_TO_BASKET_TYPE = "ADD_ITEM_TO_BASKET";
 
 export function getItems() {
   return async (dispatch: DispatchItems) => {
@@ -61,5 +63,12 @@ export function toogleTypeCheckedStatus(type: Type) {
       type: SET_TYPES,
       payload: type,
     });
+  };
+}
+
+export function addItemToBasket(id: string) {
+  return {
+    type: ADD_ITEM_TO_BASKET,
+    payload: id,
   };
 }

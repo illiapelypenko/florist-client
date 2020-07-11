@@ -1,6 +1,12 @@
 import initialState from "./initialState";
-import { Action, State, Type } from "./types";
-import { GET_ITEMS, GET_TYPES, SET_TYPES, GET_CONTACTS } from "./actions";
+import { Action, State, Type, Item } from "./types";
+import {
+  GET_ITEMS,
+  GET_TYPES,
+  SET_TYPES,
+  GET_CONTACTS,
+  ADD_ITEM_TO_BASKET,
+} from "./actions";
 
 function reducer(state: State = initialState, action: Action): State {
   switch (action.type) {
@@ -29,6 +35,11 @@ function reducer(state: State = initialState, action: Action): State {
         types: newTypes,
       };
 
+    case ADD_ITEM_TO_BASKET:
+      return {
+        ...state,
+        basket: [...state.basket, action.payload],
+      };
     default:
       return state;
   }

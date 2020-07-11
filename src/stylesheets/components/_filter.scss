@@ -1,0 +1,46 @@
+ul.filter {
+  min-width: 200px;
+  height: max-content;
+  padding: 20px 20px;
+  list-style: none;
+  // background-color: rgba($main-color, 0.3);
+  border: 2px rgba($main-color, 0.5) dashed;
+  border-radius: 15px;
+  position: sticky;
+  top: 40px;
+
+  .filter__item {
+    margin-top: 5px;
+    cursor: pointer;
+    width: max-content;
+
+    label {
+      text-transform: capitalize;
+      margin-left: 5px;
+      -webkit-user-select: none;
+      cursor: pointer;
+      position: relative;
+      padding: 0px 5px;
+
+      &::before {
+        z-index: -1;
+        position: absolute;
+        content: '';
+        bottom: 0px;
+        left: 0px;
+        height: 0%;
+        width: 100%;
+        background-color: rgba($secondary-color, 1);
+        transition: 0.1s;
+      }
+
+      &:hover::before {
+        height: 35%;
+      }
+    }
+
+    input {
+      cursor: pointer;
+    }
+  }
+}
