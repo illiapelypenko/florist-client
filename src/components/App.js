@@ -5,7 +5,7 @@ import Flowers from './Flowers/Flowers';
 import Footer from './Footer/Footer';
 import serverURL from '../serverURL';
 import axios from 'axios';
-import './App.scss';
+import '../stylesheets/main.scss';
 import Navbar from './Navbar/Navbar';
 
 const App = () => {
@@ -49,11 +49,11 @@ const App = () => {
     <div className='app'>
       <Header contacts={contacts} />
       <Navbar />
-      {/* <div className='main'>
+      <div className='main'>
         <Filter types={types} onTypeChange={handleTypeChange} />
         <Flowers flowers={items} types={types} />
       </div>
-      <Footer /> */}
+      <Footer />
     </div>
   );
 };

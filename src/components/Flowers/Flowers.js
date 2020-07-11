@@ -1,5 +1,4 @@
 import React from "react";
-import "./Flowers.scss";
 import Flower from "./Flower";
 
 const Flowers = ({ flowers, types }) => (

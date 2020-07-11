@@ -20,7 +20,7 @@ const Header = ({ contacts }) => {
       </div>
       <div className='header__block'>
         <div className='header__icon-container'>
-          <img class='header__icon' src={FlowerIcon}></img>
+          <img className='header__icon' src={FlowerIcon} alt="flower-icon"></img>
         </div>
       </div>
     </div>

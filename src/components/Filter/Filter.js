@@ -1,12 +1,11 @@
 import React from "react";
-import "./Filter.scss";
 
 const Filter = ({ types, onTypeChange }) => {
   return (
-    <div className="filter">
+    <ul className="filter">
       {types.map((type, index) => {
         return (
-          <div key={index} className="filter__item">
+          <li key={index} className="filter__item">
             <input
               type="checkbox"
               id={type.name}
@@ -15,10 +14,10 @@ const Filter = ({ types, onTypeChange }) => {
               checked={type.checked}
             />
             <label htmlFor={type.name}>{type.name}</label>
-          </div>
+          </li>
         );
       })}
-    </div>
+    </ul>
   );
 };
 

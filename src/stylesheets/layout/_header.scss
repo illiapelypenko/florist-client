@@ -19,6 +19,23 @@
 
     li {
       margin: 5px 0px;
+      position: relative;
+
+      &::before {
+        z-index: -1;
+        position: absolute;
+        content: '';
+        bottom: 0px;
+        left: 0px;
+        height: 0%;
+        width: 100%;
+        background-color: rgba($secondary-color, 1);
+        transition: 0.1s;
+      }
+
+      &:hover::before {
+        height: 100%;
+      }
 
       a {
         color: $font-color;
@@ -33,6 +50,7 @@
     justify-content: center;
     align-items: center;
     color: $main-color;
+    -webkit-user-select: none;
 
     h1 {
       font-family: $logo-font;
