@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { getItems } from '../redux/actions';
 import Header from './Header/Header';
 import Filter from './Filter/Filter';
 import Flowers from './Flowers/Flowers';
@@ -7,17 +8,20 @@ import serverURL from '../serverURL';
 import axios from 'axios';
 import '../stylesheets/main.scss';
 import Navbar from './Navbar/Navbar';
+import { useDispatch, useSelector } from 'react-redux';
 
 const App = () => {
-  const [items, setItems] = useState([]);
+  // const [items, setItems] = useState([]);
   const [contacts, setContacts] = useState([]);
   const [types, setTypes] = useState([]);
+  const dispatch = useDispatch();
+  const items = useSelector(state => state.items);
 
-  const getItems = async () => {
-    const res = await axios.get(`${serverURL}/api/items/all`);
-    const items = await res.data;
-    setItems(items);
-  };
+  // const getItems = async () => {
+  //   const res = await axios.get(`${serverURL}/api/items/all`);
+  //   const items = await res.data;
+  //   setItems(items);
+  // };
 
   const getTypes = async () => {
     const res = await axios.get(`${serverURL}/api/types/all`);
@@ -40,7 +44,8 @@ const App = () => {
   };
 
   useEffect(() => {
-    getItems();
+    // getItems();
+    dispatch(getItems());
     getTypes();
     getContacts();
   }, []);
