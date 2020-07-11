@@ -1,9 +1,10 @@
 import React from "react";
 import FlowerIcon from "../../assets/flower.svg";
 import { useSelector } from "react-redux";
+import { State, Contacts } from "../../redux/types";
 
 const Header = () => {
-  const contacts = useSelector((state) => state.contacts);
+  const contacts: Contacts = useSelector((state: State) => state.contacts);
 
   return (
     <div className='header'>

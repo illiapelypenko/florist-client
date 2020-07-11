@@ -1,6 +1,11 @@
-import React from 'react';
+import React from "react";
+import { Item } from "../../redux/types";
 
-const Flower = ({ flower: { _id, fileName, location, name, price } }) => {
+type Flower = {
+  item: Item;
+};
+
+const Flower = ({ item: { location, name, price } }: Flower) => {
   return (
     <div className='flower'>
       <div

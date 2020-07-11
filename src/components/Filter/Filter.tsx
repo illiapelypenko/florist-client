@@ -1,12 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toogleTypeCheckedStatus } from "../../redux/actions";
+import { State, Type } from "../../redux/types";
 
 const Filter = () => {
   const dispatch = useDispatch();
-  const types = useSelector((state) => state.types);
+  const types = useSelector((state: State) => state.types);
 
-  function handleChange(type) {
+  function handleChange(type: Type) {
     dispatch(toogleTypeCheckedStatus(type));
   }
 
