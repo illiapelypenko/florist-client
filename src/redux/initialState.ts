@@ -1,17 +1,17 @@
-import { State, Items, ItemTypes, Contacts } from './types';
+import { State, Item, Type, Contacts } from "./types";
 
-const items: Items = [];
-const itemTypes: ItemTypes = [];
+const items: Item[] = [];
+const types: Type[] = [];
 const contacts: Contacts = {
-  phone1: '',
-  phone2: '',
-  email: '',
+  phone1: "",
+  phone2: "",
+  email: "",
 };
 
 const initialState: State = {
-  items, 
-  itemTypes, 
-  contacts
+  items,
+  types,
+  contacts,
 };
 
 export default initialState;

@@ -1,7 +1,10 @@
-import React from 'react';
-import FlowerIcon from '../../assets/flower.svg';
+import React from "react";
+import FlowerIcon from "../../assets/flower.svg";
+import { useSelector } from "react-redux";
 
-const Header = ({ contacts }) => {
+const Header = () => {
+  const contacts = useSelector((state) => state.contacts);
+
   return (
     <div className='header'>
       <ul className='header__block header__contacts'>
@@ -20,7 +23,11 @@ const Header = ({ contacts }) => {
       </div>
       <div className='header__block'>
         <div className='header__icon-container'>
-          <img className='header__icon' src={FlowerIcon} alt="flower-icon"></img>
+          <img
+            className='header__icon'
+            src={FlowerIcon}
+            alt='flower-icon'
+          ></img>
         </div>
       </div>
     </div>

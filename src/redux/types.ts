@@ -1,14 +1,40 @@
-export type GET_ITEMS_TYPE = 'GET_ITEMS';
-export type GET_ITEMTYPES_TYPE = 'GET_TYPES';
-export type GET_CONTACTS_TYPE = 'GET_CONTACTS';
+export type GET_ITEMS_TYPE = "GET_ITEMS";
+export type GET_TYPES_TYPE = "GET_TYPES";
+export type SET_TYPES_TYPE = "SET_TYPES";
+export type GET_CONTACTS_TYPE = "GET_CONTACTS";
 
-export type DispatchItems = (arg: { type: GET_ITEMS_TYPE; payload: Items; }) => void;
-export type DispatchItemTypes = (arg: { type: GET_ITEMTYPES_TYPE; payload: ItemTypes; }) => void;
-export type DispatchContacts = (arg: { type: GET_CONTACTS_TYPE; payload: Contacts; }) => void;
+export type DispatchItems = (arg: {
+  type: GET_ITEMS_TYPE;
+  payload: Item[];
+}) => void;
 
-export type ActionTypes = GET_ITEMS_TYPE | GET_ITEMTYPES_TYPE | GET_CONTACTS_TYPE;
-export type PayloadTypes = Items | ItemTypes | Contacts;
-export type DispatchTypes = DispatchItems | DispatchItemTypes | DispatchContacts;
+export type DispatchTypes = (arg: {
+  type: GET_TYPES_TYPE;
+  payload: Type[];
+}) => void;
+
+export type DispatchToogleTypeCheckedStatus = (arg: {
+  type: SET_TYPES_TYPE;
+  payload: Type;
+}) => void;
+
+export type DispatchContacts = (arg: {
+  type: GET_CONTACTS_TYPE;
+  payload: Contacts;
+}) => void;
+
+export type ActionTypes =
+  | GET_ITEMS_TYPE
+  | GET_TYPES_TYPE
+  | GET_CONTACTS_TYPE
+  | SET_TYPES_TYPE;
+
+export type PayloadTypes = Item[] | Type[] | Contacts;
+
+// export type DispatchTypes =
+//   | DispatchItems
+//   | DispatchItemTypes
+//   | DispatchContacts;
 
 export type Action = {
   type: ActionTypes;
@@ -16,25 +42,25 @@ export type Action = {
 };
 
 export type State = {
-  items: Items;
-  itemTypes: ItemTypes;
+  items: Item[];
+  types: Type[];
   contacts: Contacts;
 };
 
-export type Items = Item[];
-export type ItemTypes = ItemType[];
-
 export type Item = {
-  id: string,
-  name: string,
-  price: string,
-  type: string,
-  birthtimeMs: number
-}
-
-export type ItemType = {
-  id: string;
+  _id: string;
   name: string;
+  price: string;
+  type: string;
+  birthtimeMs: number;
+  location: string;
+  fileName: string;
+};
+
+export type Type = {
+  _id: string;
+  name: string;
+  checked: boolean;
 };
 
 export type Contacts = {
