@@ -1,3 +1,26 @@
+@mixin flower-btn($hover-color, $visible: false) {
+  display: flex;
+  @if $visible == false {
+    display: none;
+  }
+  top: 5px;
+  right: 5px;
+  position: absolute;
+  padding: 15px;
+  color: $font-color;
+  background-color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  z-index: 2;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    color: $hover-color;
+  }
+}
+
 .flowers {
   display: grid;
   grid-template-columns: repeat(3, max-content);
@@ -17,26 +40,18 @@
     }
 
     .flower__add-btn-container {
-      display: none;
-      top: 5px;
-      right: 5px;
-      position: absolute;
-      padding: 15px;
-      color: $font-color;
-      background-color: #fff;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      z-index: 2;
-      justify-content: center;
-      align-items: center;
+      @include flower-btn($add-to-cart-color);
+    }
 
-      &:hover {
-        color: $add-to-cart-color;
-      }
+    .flower__delete-btn-container {
+      @include flower-btn(red, true);
     }
 
     &:hover .flower__add-btn-container {
+      display: flex;
+    }
+
+    &:hover .flower__delete-btn-container {
       display: flex;
     }
 

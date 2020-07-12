@@ -1,10 +1,13 @@
 import React from "react";
 import Flower from "./Flower";
 import { useSelector } from "react-redux";
-import { State } from "../../redux/types";
+import { State, Item } from "../../redux/types";
 
-const Flowers = () => {
-  const items = useSelector((state: State) => state.items);
+type Flowers = {
+  items: Item[];
+};
+
+const Flowers = ({ items }: Flowers) => {
   const types = useSelector((state: State) => state.types);
 
   return (

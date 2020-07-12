@@ -1,27 +1,4 @@
 .basket {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  position: sticky;
-  bottom: 20px;
-  right: 0px;
-  background-color: #fff;
-  border-radius: 50%;
-  z-index: 2;
-  padding: 10px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  cursor: pointer;
-  justify-self: center;
-  align-self: end;
-
-  &__icon {
-    transition: 0.2s;
-    width: 40px;
-    height: 40px;
-    fill: $font-color;
-  }
-
-  &:hover &__icon {
-    fill: $main-color;
-  }
+  margin: 40px 0px;
+  min-height: 100vh;
 }

@@ -1,9 +1,10 @@
 import React from "react";
 import { Item } from "../../redux/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { addItemToBasket } from "../../redux/actions";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 type Flower = {
   item: Item;
@@ -11,8 +12,35 @@ type Flower = {
 
 const Flower = ({ item }: Flower) => {
   const dispatch = useDispatch();
-  const handleClick = () => {
+  const location = useLocation();
+
+  const handleAddClick = () => {
     dispatch(addItemToBasket(item._id));
+  };
+
+  // #TODO delete click
+  const handleDeleteClick = () => {
+    dispatch(addItemToBasket(item._id));
+  };
+
+  const flowerBtn = () => {
+    switch (location.pathname) {
+      case "/":
+        return (
+          <div className='flower__add-btn-container' onClick={handleAddClick}>
+            <FontAwesomeIcon icon={faPlus} />
+          </div>
+        );
+      case "/basket":
+        return (
+          <div
+            className='flower__delete-btn-container'
+            onClick={handleDeleteClick}
+          >
+            <FontAwesomeIcon icon={faTimes} />
+          </div>
+        );
+    }
   };
 
   return (
@@ -28,9 +56,7 @@ const Flower = ({ item }: Flower) => {
       <div className='flower__main-info'>
         <div className='flower__name'>{item.name}</div>
         <div className='flower__price'>{item.price} грн</div>
-        <div className='flower__add-btn-container' onClick={handleClick}>
-          <FontAwesomeIcon icon={faPlus} />
-        </div>
+        {flowerBtn()}
       </div>
     </div>
   );
