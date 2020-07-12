@@ -6,6 +6,7 @@ import {
   SET_TYPES,
   GET_CONTACTS,
   ADD_ITEM_TO_BASKET,
+  DELETE_ITEM_FROM_BASKET,
 } from "./actions";
 
 function reducer(state: State = initialState, action: Action): State {
@@ -39,6 +40,17 @@ function reducer(state: State = initialState, action: Action): State {
       return {
         ...state,
         basket: [...state.basket, action.payload],
+      };
+
+    case DELETE_ITEM_FROM_BASKET:
+      const newBasket = [...state.basket];
+      newBasket.splice(
+        [...state.basket].findIndex((item) => action.payload._id === item._id),
+        1
+      );
+      return {
+        ...state,
+        basket: newBasket,
       };
     default:
       return state;

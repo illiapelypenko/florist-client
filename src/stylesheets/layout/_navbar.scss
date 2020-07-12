@@ -6,7 +6,8 @@
   border: 1px $font-color solid;
   border-left: none;
   border-right: none;
-  height: 3rem;
+  // height: 3rem;
+  flex: 0 1 3rem;
   // position: sticky;
   // position: -webkit-sticky;
   // top: 0px;
@@ -22,7 +23,7 @@
     position: relative;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       height: 0px;
       width: 100%;

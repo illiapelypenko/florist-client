@@ -3,6 +3,7 @@ export type GET_TYPES_TYPE = "GET_TYPES";
 export type SET_TYPES_TYPE = "SET_TYPES";
 export type GET_CONTACTS_TYPE = "GET_CONTACTS";
 export type ADD_ITEM_TO_BASKET_TYPE = "ADD_ITEM_TO_BASKET";
+export type DELETE_ITEM_FROM_BASKET_TYPE = "DELETE_ITEM_FROM_BASKET";
 
 export type DispatchItems = (arg: {
   type: GET_ITEMS_TYPE;
@@ -34,7 +35,8 @@ export type ActionTypes =
   | GET_TYPES_TYPE
   | GET_CONTACTS_TYPE
   | SET_TYPES_TYPE
-  | ADD_ITEM_TO_BASKET_TYPE;
+  | ADD_ITEM_TO_BASKET_TYPE
+  | DELETE_ITEM_FROM_BASKET_TYPE;
 
 export type PayloadTypes = Item[] | Type[] | Contacts;
 
@@ -77,4 +79,4 @@ export type Contacts = {
   email: string;
 };
 
-export type Basket = string[];
+export type Basket = Item[];

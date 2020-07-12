@@ -2,7 +2,7 @@ import React from "react";
 import { Item } from "../../redux/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { addItemToBasket } from "../../redux/actions";
+import { addItemToBasket, deleteItemFromBasket } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 
@@ -15,12 +15,12 @@ const Flower = ({ item }: Flower) => {
   const location = useLocation();
 
   const handleAddClick = () => {
-    dispatch(addItemToBasket(item._id));
+    dispatch(addItemToBasket(item));
   };
 
   // #TODO delete click
   const handleDeleteClick = () => {
-    dispatch(addItemToBasket(item._id));
+    dispatch(deleteItemFromBasket(item));
   };
 
   const flowerBtn = () => {
