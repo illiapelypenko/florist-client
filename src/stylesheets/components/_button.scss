@@ -1,0 +1,12 @@
+button.btn {
+  border: none;
+  background: darken($secondary-color, 10%);
+  padding: 10px 20px;
+  width: max-content;
+  display: block;
+  cursor: pointer;
+
+  &:hover {
+    background: darken($secondary-color, 30%);
+  }
+}

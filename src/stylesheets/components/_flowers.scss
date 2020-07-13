@@ -3,6 +3,7 @@
   @if $visible == false {
     display: none;
   }
+  opacity: 1;
   top: 5px;
   right: 5px;
   position: absolute;
@@ -48,7 +49,7 @@
     }
 
     .flower__add-btn-container {
-      @include flower-btn($add-to-cart-color);
+      @include flower-btn(darken($secondary-color, 30%));
     }
 
     .flower__delete-btn-container {

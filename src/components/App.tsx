@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import { getItems, getTypes, getContacts } from "../redux/actions";
 import { State } from "../redux/types";
 import Header from "./Header/Header";
-import Filter from "./Filter/Filter";
+import FilterPanel from "./SidePanels/FilterPanel";
+import OrderPanel from "./SidePanels/OrderPanel";
 import Flowers from "./Flowers/Flowers";
 import Footer from "./Footer/Footer";
 import "../stylesheets/main.scss";
@@ -16,6 +17,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   const items = useSelector((state: State) => state.items);
+  const basket = useSelector((state: State) => state.basket);
 
   useEffect(() => {
     dispatch(getItems());
@@ -28,18 +30,19 @@ const App = () => {
       <div className='app'>
         <Header />
         <Navbar />
-        <Switch>
-          <Route exact path='/'>
-            <div className='main'>
-              <Filter />
+        <div className='main'>
+          <Switch>
+            <Route exact path='/'>
+              <FilterPanel />
               <Flowers items={items} />
               <BasketIcon />
-            </div>
-          </Route>
-          <Route path='/basket'>
-            <Basket />
-          </Route>
-        </Switch>
+            </Route>
+            <Route exact path='/basket'>
+              <OrderPanel />
+              <Flowers items={basket} />
+            </Route>
+          </Switch>
+        </div>
         <Footer />
       </div>
     </Router>
