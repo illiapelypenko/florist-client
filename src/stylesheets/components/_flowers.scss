@@ -23,13 +23,12 @@
 }
 
 .flowers {
-  display: grid;
-  grid-template-columns: repeat(3, max-content);
-  grid-auto-rows: max-content;
-  // justify-content: space-between;
-  gap: 40px;
-  // display: flex;
-  // flex-wrap: wrap;
+  // display: grid;
+  // grid-template-columns: repeat(3, max-content);
+  // grid-auto-rows: max-content;
+  // gap: 40px;
+  display: flex;
+  flex-wrap: wrap;
   // justify-content: space-between;
 
   .flower {
@@ -37,7 +36,7 @@
     width: 300px;
     display: grid;
     border: 2px rgba($main-color, 0.8) dashed;
-    // margin-bottom: 40px;
+    margin: 0px 20px 20px 0px;
 
     &:last-child {
       margin-bottom: 0px;
