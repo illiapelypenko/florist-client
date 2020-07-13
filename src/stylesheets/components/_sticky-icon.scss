@@ -1,9 +1,12 @@
 .sticky-container {
-  justify-self: center;
-  align-self: end;
+  // justify-self: center;
+  align-self: flex-end;
   position: sticky;
-  bottom: 20px;
+  bottom: 40px;
   right: 0px;
+  flex: 0 1;
+  height: max-content;
+  margin-bottom: $main-gap;
 
   .sticky-icon {
     display: flex;

@@ -27,19 +27,20 @@
   // grid-template-columns: repeat(3, max-content);
   // grid-auto-rows: max-content;
   // gap: 40px;
+  flex: 1 1;
   display: flex;
   flex-wrap: wrap;
-  // justify-content: space-between;
+  justify-content: center;
 
   .flower {
     position: relative;
     width: 300px;
     display: grid;
     border: 2px rgba($main-color, 0.8) dashed;
-    margin: 0px 20px 20px 0px;
+    margin: 0px $main-gap $main-gap 0px;
 
     &:last-child {
-      margin-bottom: 0px;
+      // margin-bottom: 0px;
     }
     // border-radius: 15px;
 

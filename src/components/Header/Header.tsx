@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <div className='header'>
-      <ul className='header__block header__contacts'>
+      <ul className='header__contacts'>
         <li>
           <a href={`tel:${contacts.phone1}`}>{contacts.phone1}</a>
         </li>
@@ -18,10 +18,10 @@ const Header = () => {
           <a href={`email:${contacts.email}`}>{contacts.email}</a>
         </li>
       </ul>
-      <div className='header__block header__logo'>
+      <div className='header__logo'>
         <h1>FLORIST</h1>
       </div>
-      <div className='header__block'></div>
+      {/* <div className='header__block'></div> */}
     </div>
   );
 };

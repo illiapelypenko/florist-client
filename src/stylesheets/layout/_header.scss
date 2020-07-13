@@ -1,16 +1,13 @@
 .header {
   // height: 100px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   flex: 0 1 100px;
 
-  &__block {
-    width: 250px;
-    height: 100%;
-  }
-
   &__contacts {
+    flex: 0 1;
     height: 100%;
     list-style: none;
     display: flex;
@@ -47,9 +44,10 @@
   }
 
   &__logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    // margin: auto;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
     color: $main-color;
     -webkit-user-select: none;
 
