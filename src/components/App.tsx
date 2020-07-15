@@ -11,7 +11,6 @@ import Navbar from "./Navbar/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import BasketIcon from "./Basket/BasketIcon";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Basket from "./Basket/Basket";
 
 const App = () => {
   const dispatch = useDispatch();
