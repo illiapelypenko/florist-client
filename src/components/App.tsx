@@ -11,12 +11,14 @@ import Navbar from "./Navbar/Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import BasketIcon from "./Basket/BasketIcon";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import WithSpinner from "./Useful/WithSpinner";
 
 const App = () => {
   const dispatch = useDispatch();
 
   const items = useSelector((state: State) => state.items);
   const basket = useSelector((state: State) => state.basket);
+  const types = useSelector((state: State) => state.types);
 
   useEffect(() => {
     dispatch(getItems());
@@ -32,13 +34,21 @@ const App = () => {
         <div className='main'>
           <Switch>
             <Route exact path='/'>
-              <FilterPanel />
-              <Flowers items={items} spinner={true} />
+              <WithSpinner
+                data={types}
+                Component={FilterPanel}
+                renderComponentIf={(types) => types.length > 0}
+              />
+              <WithSpinner
+                data={items}
+                Component={Flowers}
+                renderComponentIf={(items) => items.length > 0}
+              />
               <BasketIcon />
             </Route>
             <Route exact path='/basket'>
               <OrderPanel />
-              <Flowers items={basket} spinner={false} />
+              <Flowers data={basket} />
             </Route>
           </Switch>
         </div>

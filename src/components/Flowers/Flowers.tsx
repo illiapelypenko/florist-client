@@ -5,31 +5,22 @@ import { State, Item } from "../../redux/types";
 import Spinner from "../Useful/Spinner";
 
 type Flowers = {
-  items: Item[];
-  spinner: boolean;
+  data: Item[];
 };
 
-const Flowers = ({ items, spinner }: Flowers) => {
+const Flowers = ({ data }: Flowers) => {
   const types = useSelector((state: State) => state.types);
 
   return (
-    <>
-      {items.length > 0 ? (
-        <div className='flowers'>
-          {types.find((type) => type.checked)
-            ? items.map((item, index) =>
-                types.find(
-                  (type) => type.checked && type.name === item.type
-                ) ? (
-                  <Flower key={index} item={item} />
-                ) : null
-              )
-            : items.map((item, index) => <Flower key={index} item={item} />)}
-        </div>
-      ) : spinner ? (
-        <Spinner />
-      ) : null}
-    </>
+    <div className='flowers'>
+      {types.find((type) => type.checked)
+        ? data.map((item, index) =>
+            types.find((type) => type.checked && type.name === item.type) ? (
+              <Flower key={index} item={item} />
+            ) : null
+          )
+        : data.map((item, index) => <Flower key={index} item={item} />)}
+    </div>
   );
 };
 

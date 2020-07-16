@@ -1,14 +1,18 @@
-import React, { Component } from "react";
+import React from "react";
 import Spinner from "./Spinner";
 
 interface IWithSpinner<T> {
   data: T;
-  component: Component;
-  func: (data: T) => boolean;
+  Component: (data: any) => JSX.Element;
+  renderComponentIf: (data: T) => boolean;
 }
 
-const WithSpinner = ({ data, component, func }: IWithSpinner<any>) => {
-  return <>{func(data) ? <Spinner /> : component}</>;
+const WithSpinner = ({
+  data,
+  Component,
+  renderComponentIf,
+}: IWithSpinner<any>) => {
+  return renderComponentIf(data) ? <Component data={data} /> : <Spinner />;
 };
 
 export default WithSpinner;
