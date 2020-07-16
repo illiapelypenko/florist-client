@@ -6,14 +6,15 @@ import Spinner from "../Useful/Spinner";
 
 type Flowers = {
   items: Item[];
+  spinner: boolean;
 };
 
-const Flowers = ({ items }: Flowers) => {
+const Flowers = ({ items, spinner }: Flowers) => {
   const types = useSelector((state: State) => state.types);
 
   return (
     <>
-      {types.length > 0 ? (
+      {items.length > 0 ? (
         <div className='flowers'>
           {types.find((type) => type.checked)
             ? items.map((item, index) =>
@@ -25,9 +26,9 @@ const Flowers = ({ items }: Flowers) => {
               )
             : items.map((item, index) => <Flower key={index} item={item} />)}
         </div>
-      ) : (
+      ) : spinner ? (
         <Spinner />
-      )}
+      ) : null}
     </>
   );
 };

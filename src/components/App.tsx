@@ -33,12 +33,12 @@ const App = () => {
           <Switch>
             <Route exact path='/'>
               <FilterPanel />
-              <Flowers items={items} />
+              <Flowers items={items} spinner={true} />
               <BasketIcon />
             </Route>
             <Route exact path='/basket'>
               <OrderPanel />
-              <Flowers items={basket} />
+              <Flowers items={basket} spinner={false} />
             </Route>
           </Switch>
         </div>

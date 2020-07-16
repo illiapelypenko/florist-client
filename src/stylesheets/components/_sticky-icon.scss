@@ -28,5 +28,9 @@
     &:hover .sticky-icon__svg {
       fill: $main-color;
     }
+
+    &--animate {
+      background: red;
+    }
   }
 }

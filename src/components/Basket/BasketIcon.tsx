@@ -1,12 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { State } from "../../redux/types";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
+export let makeAnimation: () => void;
 
 const BasketIcon = () => {
+  // const basket = useSelector((state: State) => {
+  //   return state.basket;
+  // });
+
+  const [needAnimation, setNeedAnimation] = useState(false);
+
+  makeAnimation = () => {
+    console.log("jgygjhgj");
+    setNeedAnimation(true);
+  };
+
+  // const handleAddClick = () => {};
+
+  // const flowerBtn = () => {
+  //   return (
+  //     <div className='flower__add-btn-container' onClick={handleAddClick}>
+  //       <FontAwesomeIcon icon={faPlus} />
+  //     </div>
+  //   );
+  // };
+
   return (
     <Link className='sticky-container' to='/basket'>
-      <div className='sticky-icon'>
+      <div
+        className={`sticky-icon ${needAnimation ? "sticky-icon--animate" : ""}`}
+      >
         <svg
-          className='sticky-icon__svg'
+          // className='sticky-icon__svg '
+          className={`sticky-icon__svg`}
           id='Layer_1'
           height='512'
           viewBox='0 0 510.735 510.735'

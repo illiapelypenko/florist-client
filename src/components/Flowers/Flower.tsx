@@ -5,6 +5,7 @@ import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { addItemToBasket, deleteItemFromBasket } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
+import { makeAnimation } from "../Basket/BasketIcon";
 
 type Flower = {
   item: Item;
@@ -16,6 +17,7 @@ const Flower = ({ item }: Flower) => {
 
   const handleAddClick = () => {
     dispatch(addItemToBasket(item));
+    makeAnimation();
   };
 
   // #TODO delete click
