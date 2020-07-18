@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import serverURL from "../../serverURL.js";
 import { State } from "../../redux/types";
+import { makeOrder } from "../../redux/actions";
 
 const OrderPanel = () => {
   const dispatch = useDispatch();
@@ -14,20 +15,11 @@ const OrderPanel = () => {
 
   const handleSubmit = async (e: SyntheticEvent) => {
     e.preventDefault();
-    try {
-      const res = await axios.post(`${serverURL}/api/order/makeorder`, {
-        name,
-        address,
-        phone,
-        email,
-        basket,
-      });
-      if (res.statusText === "OK") {
-        alert("order successful");
-      }
-    } catch (e) {
-      console.log(e);
-    }
+    setName("");
+    setAddress("");
+    setPhone("");
+    setEmail("");
+    dispatch(makeOrder({ name, email, phone, address, basket }));
   };
 
   return (

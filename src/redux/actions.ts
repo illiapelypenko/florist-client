@@ -11,11 +11,15 @@ import {
   GET_CONTACTS_TYPE,
   ADD_ITEM_TO_BASKET_TYPE,
   DELETE_ITEM_FROM_BASKET_TYPE,
+  CLEAR_BASKET_TYPE,
+  DispatchClearBasket,
   Item,
   Type,
   Contacts,
+  Order,
 } from "./types";
 
+export const CLEAR_BASKET: CLEAR_BASKET_TYPE = "CLEAR_BASKET";
 export const GET_ITEMS: GET_ITEMS_TYPE = "GET_ITEMS";
 export const GET_TYPES: GET_TYPES_TYPE = "GET_TYPES";
 export const SET_TYPES: SET_TYPES_TYPE = "SET_TYPES";
@@ -80,5 +84,20 @@ export function deleteItemFromBasket(item: Item) {
   return {
     type: DELETE_ITEM_FROM_BASKET,
     payload: item,
+  };
+}
+
+export function makeOrder(order: Order) {
+  return async (dispatch: DispatchClearBasket) => {
+    try {
+      const res = await axios.post(`${serverURL}/api/order/makeorder`, order);
+      if (res.statusText === "OK") {
+        dispatch({
+          type: CLEAR_BASKET,
+        });
+      }
+    } catch {
+      console.log("makeOrder error");
+    }
   };
 }

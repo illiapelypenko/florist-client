@@ -7,6 +7,7 @@ import {
   GET_CONTACTS,
   ADD_ITEM_TO_BASKET,
   DELETE_ITEM_FROM_BASKET,
+  CLEAR_BASKET,
 } from "./actions";
 
 function reducer(state: State = initialState, action: Action): State {
@@ -51,6 +52,11 @@ function reducer(state: State = initialState, action: Action): State {
       return {
         ...state,
         basket: newBasket,
+      };
+    case CLEAR_BASKET:
+      return {
+        ...state,
+        basket: [],
       };
     default:
       return state;
