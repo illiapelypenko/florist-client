@@ -1,4 +1,4 @@
-.sticky-container {
+.basket {
   // justify-self: center;
   align-self: flex-end;
   position: sticky;
@@ -8,7 +8,7 @@
   height: max-content;
   margin-bottom: $main-gap;
 
-  .sticky-icon {
+  .basket-icon {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -25,12 +25,22 @@
       fill: $font-color;
     }
 
-    &:hover .sticky-icon__svg {
+    &:hover .basket-icon__svg {
       fill: $main-color;
     }
+  }
 
-    &--animate {
-      background: red;
-    }
+  .basket-counter {
+    background: $main-color;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
   }
 }

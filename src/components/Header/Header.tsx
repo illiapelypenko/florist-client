@@ -1,7 +1,7 @@
 import React from "react";
 import Contacts from "./Contacts";
 import Logo from "./Logo";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { State } from "../../redux/types";
 import WithSpinner from "../Useful/WithSpinner";
 

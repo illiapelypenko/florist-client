@@ -1,8 +1,7 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { toogleTypeCheckedStatus } from "../../redux/actions";
-import { State, Type } from "../../redux/types";
-import Spinner from "../Useful/Spinner";
+import { Type } from "../../redux/types";
 
 const FilterPanel = ({ data }: { data: Type[] }) => {
   const dispatch = useDispatch();

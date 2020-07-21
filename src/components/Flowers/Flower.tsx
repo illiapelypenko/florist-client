@@ -1,11 +1,10 @@
-import React from "react";
+import React, { MouseEvent } from "react";
 import { Item } from "../../redux/types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { addItemToBasket, deleteItemFromBasket } from "../../redux/actions";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
-import { makeAnimation } from "../Basket/BasketIcon";
 
 type Flower = {
   item: Item;
@@ -15,9 +14,8 @@ const Flower = ({ item }: Flower) => {
   const dispatch = useDispatch();
   const location = useLocation();
 
-  const handleAddClick = () => {
+  const handleAddClick = (e: MouseEvent) => {
     dispatch(addItemToBasket(item));
-    makeAnimation();
   };
 
   // #TODO delete click

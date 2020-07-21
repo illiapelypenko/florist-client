@@ -9,7 +9,7 @@ import Footer from "./Footer/Footer";
 import "../stylesheets/main.scss";
 import Navbar from "./Navbar/Navbar";
 import { useDispatch, useSelector } from "react-redux";
-import BasketIcon from "./Basket/BasketIcon";
+import BasketIcon from "./Basket/Basket";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import WithSpinner from "./Useful/WithSpinner";
 

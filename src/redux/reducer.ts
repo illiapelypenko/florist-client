@@ -1,5 +1,5 @@
 import initialState from "./initialState";
-import { Action, State, Type, Item } from "./types";
+import { Action, State, Type } from "./types";
 import {
   GET_ITEMS,
   GET_TYPES,

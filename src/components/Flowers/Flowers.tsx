@@ -2,7 +2,6 @@ import React from "react";
 import Flower from "./Flower";
 import { useSelector } from "react-redux";
 import { State, Item } from "../../redux/types";
-import Spinner from "../Useful/Spinner";
 
 type Flowers = {
   data: Item[];

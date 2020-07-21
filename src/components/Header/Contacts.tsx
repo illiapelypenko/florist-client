@@ -1,5 +1,5 @@
 import React from "react";
-import { State, Contacts as ContactsType } from "../../redux/types";
+import { Contacts as ContactsType } from "../../redux/types";
 
 const Contacts = ({ data }: { data: ContactsType }) => {
   return (

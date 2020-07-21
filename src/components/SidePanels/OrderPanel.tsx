@@ -1,7 +1,5 @@
 import React, { useState, SyntheticEvent } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import axios from "axios";
-import serverURL from "../../serverURL.js";
 import { State } from "../../redux/types";
 import { makeOrder } from "../../redux/actions";
 
@@ -20,6 +18,7 @@ const OrderPanel = () => {
     setPhone("");
     setEmail("");
     dispatch(makeOrder({ name, email, phone, address, basket }));
+    alert("Заказ отправлен");
   };
 
   return (
@@ -70,5 +69,4 @@ const OrderPanel = () => {
     </form>
   );
 };
-
 export default OrderPanel;
